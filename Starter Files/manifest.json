@@ -5,13 +5,12 @@
   "author": "Sumit Kumar Sah",
   "description": "A description about your Chrome Extension...",
 
-
-  
-  
   "permissions": [
     "storage",
-    "tabs"
+    "tabs",
+    "activeTab"
   ],
+
   "content_scripts": [
     {
       "matches": ["https://maang.in/problems/*"],
@@ -19,24 +18,25 @@
       "css": ["style.css"]
     }
   ],
+
   "background": {
     "service_worker": "background.js"
   },
-  "web_accessible_resources" : [
+
+  "web_accessible_resources": [
     {
       "resources": ["assets/icon.png"],
-      "matches" : ["https://maang.in/*"]
+      "matches": ["https://maang.in/*"]
     }
   ],
+
   "action": {
     "default_icon": {
       "16": "assets/icon.png",
       "24": "assets/icon.png",
       "32": "assets/icon.png"
     },
-    "default_popup": "index.html",
-    "default_title": "A tooltip popup description when you hover over the Chrome Extension icon."
+    "default_popup": "popup.html",
+    "default_title": "This Extension will help in solving problems with an AI Chat Bot."
   }
-
-  
 }
